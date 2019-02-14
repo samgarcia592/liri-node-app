@@ -3,6 +3,8 @@ var query = process.argv[3];
 
 // require("dotenv").config();
 var axios = require("axios"); 
+var Spotify = require('node-spotify-api');
+
 // var keys = require("keys-js"); 
 // var spotify = new Spotify(keys.spotify);
 
@@ -31,7 +33,6 @@ if (operator === "movie-this"){
 
     axios.get(queryUrl).then(
         function(response) {
-            console.log(response);
             console.log("Title: " + response.data.Title); 
             console.log("Release year: " + response.data.Year); 
             console.log("IMDB Rating: " + response.data.imdbRating); 
